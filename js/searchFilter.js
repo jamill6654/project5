@@ -1,28 +1,19 @@
+let userInput = document.getElementById('search');
+let captions = document.querySelectorAll('a');
 
+userInput.addEventListener("keyup", searchFilter);
 
-//selecting elements and declaring variables
-let userInput = document.querySelector('#search').value;
-let captions = document.querySelectorAll('a [data-caption]');
-const photos = document.querySelectorAll('img');
-
-//changing variables to uppercase for consistency
-userInput = userInput.toUpperCase();
-
-for (let i = 0; i < captions.length; i++){
-captions = captions[i].toUpperCase();
-};
-
-//loop to display images with only matching data-captions
-for (let i = 0; i < photos.length; i++){
-    if (captions.value === 'Null'){
-        for (let i = 0; i < photos.length; i++){
-            photos[i].style.display = grid;
+function searchFilter() {
+    
+    for (let i = 0; i < captions.length; i++){
+        let cap = captions[i].getAttribute('data-caption').toLowerCase();
+        if (cap.includes(userInput.value.toLowerCase())){
+            captions[i].style.display = "block";
+        }
+        else {
+            captions[i].style.display = "none";
         }
     }
-    else if (captions[i].includes(userInput)){
-        photos[i].style.display = grid;
-    }
-    else {
-        photos[i].style.display = none;
-    }
 }
+
+

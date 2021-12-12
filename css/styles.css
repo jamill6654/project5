@@ -2,11 +2,9 @@
     box-sizing:border-box
 }
 
-.photo-container{
+.gallery{
     display:grid;
     grid-template-columns: repeat(auto-fit,20rem);
-    /* grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(3,1fr); */
     grid-row-gap: 20px;
     margin:0 auto;
     margin-top:50px;
@@ -34,5 +32,3 @@
 .search-box::placeholder {
     color:lightgrey;
 }
-
-/* No CSS *//*# sourceMappingURL=styles.css.map */
